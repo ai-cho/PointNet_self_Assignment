@@ -164,7 +164,7 @@ if __name__ == "__main__":
     parser.add_argument("--lr", type=float, default=1e-3)
 
     args = parser.parse_args()
-    args.gpu = 0
+    args.gpu = -1
     args.save = True
 
     main(args)

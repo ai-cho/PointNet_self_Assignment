@@ -21,8 +21,7 @@ def step(points, labels, model):
     
     # TODO : Implement step function for classification.
     logits = model(points) # (B, # of clases)
-    criterion = F.cross_entropy()
-    loss = criterion(logits, labels)
+    loss = F.cross_entropy(logits, labels.to(dtype=torch.long)) # label type: int ==> error. cross entropy requires dtype Long
     preds = torch.argmax(logits, dim=1)
 
     return loss, preds
@@ -151,7 +150,7 @@ if __name__ == "__main__":
     parser.add_argument("--lr", type=float, default=1e-3)
 
     args = parser.parse_args()
-    args.gpu = 0
+    args.gpu = 1 
     args.save = True
 
     main(args)

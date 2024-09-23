@@ -187,19 +187,19 @@ class PointNetPartSeg(nn.Module):
         )
 
         self.mlp3 = nn.Sequential(
-            nn.Conv1d(1088, 512),
+            nn.Conv1d(1088, 512, 1),
             nn.BatchNorm1d(512),
             nn.ReLU(),
-            nn.Conv1d(512, 256),
+            nn.Conv1d(512, 256, 1),
             nn.BatchNorm1d(256),
             nn.ReLU(),
-            nn.Conv1d(256, 128),
+            nn.Conv1d(256, 128, 1),
             nn.BatchNorm1d(128),
             nn.ReLU()
         )
 
         self.mlp4 = nn.Sequential(
-            nn.Conv1d(128, m)
+            nn.Conv1d(128, m, 1)
         )
 
     def forward(self, pointcloud):

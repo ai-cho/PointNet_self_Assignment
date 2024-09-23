@@ -16,7 +16,7 @@ class ModelNetDataset(torch.utils.data.Dataset):
         data_dir = os.getcwd()
         self.phase = phase
         self.data_dir = data_dir
-        self.modelnet_dir = osp.join(data_dir, "modelnet40_ply_hdf5_2048")
+        self.modelnet_dir = osp.join(data_dir+"//data", "modelnet40_ply_hdf5_2048")
         print(self.modelnet_dir)
         print('실행 중')
         # self.download_data()
