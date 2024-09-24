@@ -7,3 +7,8 @@
     Programming Assignment 1    
   </p>
 </div>
+
+
+my codes work well in 'cpu'.
+
+can't be checked in 'gpu' because of restricted resource.
